@@ -1,6 +1,9 @@
 extends layout
 
 block content
+  script(src='http://code.jquery.com/jquery-1.9.1.js')
+  script(src='javascripts/http.js')
   h1= title
   p Welcome to #{title}
   a(href='/users') Users
+  button(onclick=('getUrlContent()')) Click
