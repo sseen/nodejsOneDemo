@@ -3,5 +3,6 @@
  */
 
 function getUrlContent() {
-    alert(1);
+    alert(1)
+    $.post('/test');
 }
