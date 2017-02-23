@@ -16,7 +16,6 @@ router.get('/test', function(req, res, next) {
 /* POST to Add User Service */
 router.post('/test', function(req, res) {
 
-
     request('http://www.bing.com', function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body) // 打印google首页
