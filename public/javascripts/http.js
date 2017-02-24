@@ -3,5 +3,8 @@
  */
 
 function getUrlContent() {
-    $.post('/test');
+    mydata=0
+    $.post('/test',function (data) {
+        $('#content').text(data);
+    });
 }

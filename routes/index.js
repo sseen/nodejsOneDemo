@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-    res.render('index', { title: 'Express', message:'message2' });
+    res.send('3');
 });
 
 /* POST to Add User Service */
@@ -23,9 +23,8 @@ router.post('/test', function(req, res) {
             console.log(error)
         }
     })
-            // And forward to success page
-            // res.redirect("userlist");
-    res.render('index', { title: 'Express2', message:'message2' });
+
+    res.send("Thank you");
 
 });
 
