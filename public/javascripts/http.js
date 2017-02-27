@@ -5,6 +5,6 @@
 function getUrlContent() {
     mydata=0
     $.post('/test',function (data) {
-        $('#content').text(data);
+        $('#content').html(data);
     });
 }
