@@ -3,7 +3,15 @@ var router = express.Router();
 
 var request = require('request');
 var cheerio = require('cheerio');
-var iconv = require('iconv-lite')
+var iconv = require('iconv-lite');
+
+// react
+var React = require('react');
+var ReactDOM = require('react-dom/server');
+var Home = require('home');
+router.get('/react', function(req, res)  {
+    res.send(ReactDOM.renderToString(React.createFactory(Home)()))
+});
 
 
 /* GET home page. */
