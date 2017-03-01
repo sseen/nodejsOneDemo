@@ -7,6 +7,8 @@ function getUrlContent() {
     $.post('/test',function (data) {
 
         $('#content').html(data);
+        $('#content').addClass('mui-content mui-scroll-wrapper')
+        $('#content > ul').addClass('mui-table-view mui-table-view-chevron');
         $('#content > ul > li').addClass('mui-table-view-cell');
     });
 }

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebcc9aca-dd39-43d5-8d6f-639a2035f76a" name="Default" comment="server js (index.js) can not import local js home.js">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/mui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/mui.min.css" />
+    <list default="true" id="ebcc9aca-dd39-43d5-8d6f-639a2035f76a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/request/node_modules/hawk/.npmignore" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/hawk/.npmignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/request/node_modules/hawk/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/hawk/.travis.yml" />
@@ -59,11 +57,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/lib/validate.js" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/lib/validate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/test/tests.js" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/test/tests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/LICENSE" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/home.js" afterPath="$PROJECT_DIR$/public/javascripts/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/http.js" afterPath="$PROJECT_DIR$/public/javascripts/http.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,12 +79,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.jade" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <file leaf-file-name="http.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/http.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!doc;n#getUrlContent#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,10 +111,10 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/users.jade" />
         <option value="$PROJECT_DIR$/public/javascripts/home.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/http.js" />
         <option value="$PROJECT_DIR$/views/index.jade" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/public/javascripts/http.js" />
       </list>
     </option>
   </component>
@@ -365,7 +362,7 @@
       <workItem from="1487896019829" duration="8484000" />
       <workItem from="1488155400546" duration="6778000" />
       <workItem from="1488241779287" duration="4962000" />
-      <workItem from="1488328188987" duration="10401000" />
+      <workItem from="1488328188987" duration="10881000" />
     </task>
     <task id="LOCAL-00001" summary="添加第一个 js 事件">
       <created>1487643503563</created>
@@ -437,11 +434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488276446021</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="css without mui, or just mui">
+      <created>1488361907406</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1488361907406</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63685000" />
+    <option name="totallyTimeSpent" value="64165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,7 +515,8 @@
     <MESSAGE value="first get dom from the website" />
     <MESSAGE value="Chinese charset issue fixed" />
     <MESSAGE value="server js (index.js) can not import local js home.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="server js (index.js) can not import local js home.js" />
+    <MESSAGE value="css without mui, or just mui" />
+    <option name="LAST_COMMIT_MESSAGE" value="css without mui, or just mui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -673,9 +678,7 @@
         <state relative-caret-position="68">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
-            <marker date="1488361524000" expanded="false" signature="0:41" ph="/** Created by sseen on 2017/2/21. ...*/" />
-            <marker date="1488361524000" expanded="true" signature="68:229" ph="{...}" />
-            <marker date="1488361524000" expanded="true" signature="118:225" ph="{...}" />
+            <element signature="n#!!doc;n#getUrlContent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -805,20 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <marker date="1488359043000" expanded="true" signature="5:85" ph="{...}" />
-            <marker date="1488359043000" expanded="true" signature="90:293" ph="{...}" />
-            <marker date="1488359043000" expanded="true" signature="306:384" ph="{...}" />
-            <marker date="1488359043000" expanded="true" signature="389:471" ph="{...}" />
-            <marker date="1488359043000" expanded="true" signature="475:532" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/mui.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -873,23 +862,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <marker date="1488361524000" expanded="false" signature="0:41" ph="/** Created by sseen on 2017/2/21. ...*/" />
-            <marker date="1488361524000" expanded="true" signature="68:229" ph="{...}" />
-            <marker date="1488361524000" expanded="true" signature="118:225" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1488361835000" expanded="true" signature="21:313" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <marker date="1488362044000" expanded="true" signature="5:85" ph="{...}" />
+            <marker date="1488362044000" expanded="true" signature="90:325" ph="{...}" />
+            <marker date="1488362044000" expanded="true" signature="338:416" ph="{...}" />
+            <marker date="1488362044000" expanded="true" signature="421:476" ph="{...}" />
+            <marker date="1488362044000" expanded="true" signature="480:545" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc;n#getUrlContent#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
