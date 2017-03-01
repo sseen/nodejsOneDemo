@@ -5,13 +5,13 @@ var request = require('request');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 
-// react
-var React = require('react');
-var ReactDOM = require('react-dom/server');
-var Home = require('home');
-router.get('/react', function(req, res)  {
-    res.send(ReactDOM.renderToString(React.createFactory(Home)()))
-});
+// react 暂时不用
+// var React = require('react');
+// var ReactDOM = require('react-dom/server');
+// var Home = require('./public/javascripts/Home');
+// router.get('/react', function(req, res)  {
+//     res.send(ReactDOM.renderToString(React.createFactory(Home)()))
+// });
 
 
 /* GET home page. */
@@ -34,9 +34,10 @@ router.post('/test', function(req, res) {
             console.log(html) // 打印google首页
             //这里处理所有细节
 
-
             var $ = cheerio.load(html,{decodeEntities: false});
             var content = $("div.hnnuxysh_newsList").html()
+
+
             res.send(content);
         } else {
             console.log(error)
