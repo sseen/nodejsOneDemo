@@ -35,6 +35,10 @@ router.post('/test', function(req, res) {
             //这里处理所有细节
 
             var $ = cheerio.load(html,{decodeEntities: false});
+            $('div.navigation_style').remove()
+            $('div.clear').remove()
+            $('div.hnnuxysh_nextPage').remove()
+            $('div.footer').remove()
             var content = $("div.hnnuxysh_newsList").html()
 
 
