@@ -33,7 +33,7 @@ router.post('/test', function(req, res) {
             var html = iconv.decode(body, 'gbk' +
                 '')
             var content='';
-            console.log(html) // 打印google首页
+            //console.log(html) // 打印google首页
             //这里处理所有细节
 
             var $ = cheerio.load(html,{decodeEntities: false});
@@ -55,14 +55,15 @@ router.post('/test', function(req, res) {
 });
 
 router.post('/moreData', function (req, res) {
-
+    var page2 = req.param('nowPage');
+    var html2 = page2 + '.html';
     request( {
         encoding: null,
-        url: 'http://www.hainnu.edu.cn/html/xiaoyuan/'}, function (error, response, body) {
+        url: 'http://www.hainnu.edu.cn/html/xiaoyuan/' + html2}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var html = iconv.decode(body, 'gbk' + '');
             var content='';
-            console.log(html); // 打印google首页
+            //console.log(html); // 打印google首页
             //这里处理所有细节
 
             var $ = cheerio.load(html,{decodeEntities: false});

@@ -32,14 +32,14 @@ function getUrlContent() {
 }
 
 function getMoreDat(nowPage) {
-    mydata=0
-    wrapperID = '#pullrefresh'
-    scrollID = '#scroll'
-    ulID = '#uList'
-    $.post('/moreData',function (data) {
+    ulID = '#uList';
+    $.post('/moreData?nowPage='+nowPage,function (data) {
 
         // add content
-        $(ulID).append(data)
+        $(ulID).append(data);
+        $(ulID + '> li').addClass('mui-table-view-cell');
+        $(ulID + '> li a').addClass('mui-navigate-right');
+        $(ulID + '> li h4').addClass('mui-pull-right');
 
     });
 }
