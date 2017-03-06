@@ -6,22 +6,40 @@ function getUrlContent() {
     mydata=0
     wrapperID = '#pullrefresh'
     scrollID = '#scroll'
+    ulID = '#uList'
     $.post('/test',function (data) {
         
         // add content
-        $(scrollID).html(data);
+        $(ulID).html(data);
 
         // div scroll wapper
         $(wrapperID).addClass('mui-content mui-scroll-wrapper')
         // div scroll
         $(scrollID).addClass('mui-scroll')
         // div pull refresh top
-        $(scrollID + '> ul').addClass('mui-table-view mui-table-view-chevron');
-        $(scrollID + '> ul > li').addClass('mui-table-view-cell');
-        $(scrollID + '> ul > li a').addClass('mui-navigate-right');
-        $(scrollID + '> ul > li h4').addClass('mui-pull-right');
+        $(ulID).addClass('mui-table-view mui-table-view-chevron');
+        $(ulID + '> li').addClass('mui-table-view-cell');
+        $(ulID + '> li a').addClass('mui-navigate-right');
+        $(ulID + '> li h4').addClass('mui-pull-right');
 
         // remove header
         $('#header').remove();
+
+
+        // stop refresh
+        mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+    });
+}
+
+function getMoreDat(nowPage) {
+    mydata=0
+    wrapperID = '#pullrefresh'
+    scrollID = '#scroll'
+    ulID = '#uList'
+    $.post('/moreData',function (data) {
+
+        // add content
+        $(ulID).append(data)
+
     });
 }

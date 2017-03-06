@@ -30,7 +30,9 @@ router.post('/test', function(req, res) {
         encoding: null,
         url: 'http://www.hainnu.edu.cn/html/xiaoyuan/'}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            var html = iconv.decode(body, 'gbk')
+            var html = iconv.decode(body, 'gbk' +
+                '')
+            var content='';
             console.log(html) // 打印google首页
             //这里处理所有细节
 
@@ -39,7 +41,9 @@ router.post('/test', function(req, res) {
             $('div.clear').remove()
             $('div.hnnuxysh_nextPage').remove()
             $('div.footer').remove()
-            var content = $("div.hnnuxysh_newsList").html()
+            $("div.hnnuxysh_newsList ul li").each(function (i, elem) {
+                content += ($(this))
+            }).html()
 
 
             res.send(content);
@@ -48,7 +52,31 @@ router.post('/test', function(req, res) {
         }
     })
 
+});
 
+router.post('/moreData', function (req, res) {
+
+    request( {
+        encoding: null,
+        url: 'http://www.hainnu.edu.cn/html/xiaoyuan/'}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var html = iconv.decode(body, 'gbk' + '');
+            var content='';
+            console.log(html); // 打印google首页
+            //这里处理所有细节
+
+            var $ = cheerio.load(html,{decodeEntities: false});
+
+            $("div.hnnuxysh_newsList ul li").each(function (i, elem) {
+                content += ($(this))
+            }).html();
+
+
+            res.send(content);
+        } else {
+            console.log(error)
+        }
+    })
 });
 
 
