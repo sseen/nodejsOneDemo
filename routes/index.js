@@ -54,6 +54,9 @@ router.post('/test', function(req, res) {
 });
 
 // detail
+router.post('/routeToDetail', function (req, res) {
+    res.render('detail', { title: 'Express', message:'message1' });
+});
 router.post('/getDetail', function(req, res) {
     var page2 = req.param('href');
     request( {
@@ -74,8 +77,6 @@ router.post('/getDetail', function(req, res) {
                 content += ($(this))
             }).html();
 
-
-            res.render('detail', { title: 'Express', message:'message1' });
         } else {
             console.log(error)
         }

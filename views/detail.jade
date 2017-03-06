@@ -4,4 +4,10 @@
 extends layout
 
 block content
+    script.
+        $(function () {
+            self = plus.webview.currentWebview();
+            name = self.urlStr;
+            alert(name);
+        });
     div#content

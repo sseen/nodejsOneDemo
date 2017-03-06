@@ -1,9 +1,7 @@
 extends layout
 
 block content
-  script(src='http://code.jquery.com/jquery-1.9.1.js')
   script(src='javascripts/http.js')
-  script(src='javascripts/mui.min.js')
   script.
       mui.init({
           pullRefresh: {
@@ -45,12 +43,20 @@ block content
           }
           var href = this.getAttribute('href');
 
-          alert(href);
+          mui.openWindow({
+              url:'http://127.0.0.1:3000/routeToDetail',
+              id:href,
+              extras:{
+                  urlStr:href
+              }
+          })
+
+          //alert(href);
           //非plus环境，直接走href跳转
-          if (!mui.os.plus) {
-              location.href = href;
-              return;
-          }
+          //if (!mui.os.plus) {
+          //    location.href = href;
+          //    return;
+          //}
       });
 
 
