@@ -30,23 +30,52 @@ router.post('/test', function(req, res) {
         encoding: null,
         url: 'http://www.hainnu.edu.cn/html/xiaoyuan/'}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            var html = iconv.decode(body, 'gbk' +
-                '')
+            var html = iconv.decode(body, 'gbk' + '');
             var content='';
             //console.log(html) // 打印google首页
             //这里处理所有细节
 
             var $ = cheerio.load(html,{decodeEntities: false});
-            $('div.navigation_style').remove()
-            $('div.clear').remove()
-            $('div.hnnuxysh_nextPage').remove()
-            $('div.footer').remove()
+            $('div.navigation_style').remove();
+            $('div.clear').remove();
+            $('div.hnnuxysh_nextPage').remove();
+            $('div.footer').remove();
             $("div.hnnuxysh_newsList ul li").each(function (i, elem) {
                 content += ($(this))
-            }).html()
+            }).html();
 
 
             res.send(content);
+        } else {
+            console.log(error)
+        }
+    })
+
+});
+
+// detail
+router.post('/getDetail', function(req, res) {
+    var page2 = req.param('href');
+    request( {
+        encoding: null,
+        url: href}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var html = iconv.decode(body, 'gbk' + '');
+            var content='';
+            //console.log(html) // 打印google首页
+            //这里处理所有细节
+
+            var $ = cheerio.load(html,{decodeEntities: false});
+            $('div.navigation_style').remove();
+            $('div.clear').remove();
+            $('div.hnnuxysh_nextPage').remove();
+            $('div.footer').remove();
+            $("div.hnnuxysh_newsList ul li").each(function (i, elem) {
+                content += ($(this))
+            }).html();
+
+
+            res.render('detail', { title: 'Express', message:'message1' });
         } else {
             console.log(error)
         }
