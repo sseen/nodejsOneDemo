@@ -54,14 +54,11 @@ router.post('/test', function(req, res) {
 });
 
 // detail
-router.post('/routeToDetail', function (req, res) {
-    res.render('detail', { title: 'Express', message:'message1' });
-});
 router.post('/getDetail', function(req, res) {
     var page2 = req.param('href');
     request( {
         encoding: null,
-        url: href}, function (error, response, body) {
+        url: page2}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var html = iconv.decode(body, 'gbk' + '');
             var content='';
@@ -69,14 +66,9 @@ router.post('/getDetail', function(req, res) {
             //这里处理所有细节
 
             var $ = cheerio.load(html,{decodeEntities: false});
-            $('div.navigation_style').remove();
-            $('div.clear').remove();
-            $('div.hnnuxysh_nextPage').remove();
-            $('div.footer').remove();
-            $("div.hnnuxysh_newsList ul li").each(function (i, elem) {
-                content += ($(this))
-            }).html();
+            content = $("div.indexContents").html();
 
+            res.send(content);
         } else {
             console.log(error)
         }

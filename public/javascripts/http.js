@@ -59,15 +59,26 @@ function transformView() {
 
         //非plus环境，直接走href跳转
         if (!mui.os.plus) {
-            getDetail(href);
+            location.href = "http://10.70.0.222:3000/detail.html?targetId="+href;
             return;
         }
     });
 }
 
 function getDetail(href) {
-    location.href = "http://127.0.0.1:3000/getDetail?href=";
+    var contentId = '#content';
     $.post('/getDetail?href='+href,function (data) {
+        // add content
+        $(contentId).append(data);
+        $('h1').text( $('div.info_title').text() );
+        // rm title
+        $('div.info_title').remove();
+        // remove text change
+        $('div.font_change').remove();
+        // remove social share
+        $('div.jiathis_style').remove();
+        // rm other print save close
+        $('div.info_sinfol > a').remove();
 
     });
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Express</title>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="javascripts/http.js"></script>
+        <script src="javascripts/mui.min.js"></script><!--link(rel='stylesheet', href='/stylesheets/style.css')-->
+        <!--<link rel="stylesheet" type="text/css" href="stylesheets/mui.min.css">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <script>
+            // 获取url中的参数
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return unescape(r[2]);
+                } else {
+                    return null;
+                }
+            }
+            //获取url中的targetId参数
+            var targetId = getUrlParam('targetId');
+            console.log(targetId);
+
+            $(function () {
+                var targetId = getUrlParam('targetId');
+                console.log(targetId);
+                getDetail(targetId);
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1> detail </h1>
+        <div id="content">
+
+        </div>
+    </body>
+</html>

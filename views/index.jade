@@ -35,29 +35,6 @@ block content
 
       }
 
-      //主列表点击事件
-      mui('#uList').on('tap', 'a', function () {
-          var id = this.getAttribute("data-wid");
-          if (!id) {
-              id = this.getAttribute('href');
-          }
-          var href = this.getAttribute('href');
-
-          mui.openWindow({
-              url:'http://127.0.0.1:3000/routeToDetail',
-              id:href,
-              extras:{
-                  urlStr:href
-              }
-          })
-
-          //alert(href);
-          //非plus环境，直接走href跳转
-          //if (!mui.os.plus) {
-          //    location.href = href;
-          //    return;
-          //}
-      });
 
 
 

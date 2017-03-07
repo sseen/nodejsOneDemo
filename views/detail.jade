@@ -4,10 +4,30 @@
 extends layout
 
 block content
+    script(src='javascripts/http.js')
     script.
+        // 获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            } else {
+                return null;
+            }
+        }
+        //获取url中的targetId参数
+        var targetId = getUrlParam('targetId');
+        console.log(targetId);
+
+        // window ready load
         $(function () {
-            self = plus.webview.currentWebview();
-            name = self.urlStr;
-            alert(name);
+            var targetId = getUrlParam('targetId');
+            console.log(targetId);
+            getDetail(targetId);
         });
+
+
+    h1= title
+    p Welcome to #{title}
     div#content
